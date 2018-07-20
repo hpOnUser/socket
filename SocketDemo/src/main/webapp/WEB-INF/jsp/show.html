@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>无人机指派系统</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="js/jquery.form.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/oc.min.js"></script>
+    <link rel="icon" type="image/png" href="i/ico.png" sizes="16x16">
+    <script type="text/javascript">
+		setTimeout(function(){
+			push();
+		},400);
+		setInterval(function () {
+			push();
+		},5000);
+		function push() {
+			$.ajax({
+				type:"POST",
+				url:"${s.base}/show.action",
+				success:function(data)
+				{
+					alert(data.content);
+				}
+			});
+		}
+	</script>
+	
+</head>
+<body>
+	
+</body>
+
+</html>
